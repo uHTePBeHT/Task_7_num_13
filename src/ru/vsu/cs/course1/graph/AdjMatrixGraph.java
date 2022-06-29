@@ -12,6 +12,30 @@ public class AdjMatrixGraph implements Graph {
     private int vCount = 0;
     private int eCount = 0;
 
+    public boolean[][] getAdjMatrix() {
+        return adjMatrix;
+    }
+
+    public int getVCount() {
+        return vCount;
+    }
+
+    public int getECount() {
+        return eCount;
+    }
+
+    public void setAdjMatrix(boolean[][] adjMatrix) {
+        this.adjMatrix = adjMatrix;
+    }
+
+    public void setVCount(int vCount) {
+        this.vCount = vCount;
+    }
+
+    public void setECount(int eCount) {
+        this.eCount = eCount;
+    }
+
     /**
      * Конструктор
      * @param vertexCount Кол-во вершин графа (может увеличиваться при добавлении ребер)
@@ -112,5 +136,10 @@ public class AdjMatrixGraph implements Graph {
     @Override
     public boolean isAdj(int v1, int v2) {
         return adjMatrix[v1][v2];
+    }
+
+    @Override
+    public Graph clone() {
+        return null;
     }
 }

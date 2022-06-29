@@ -88,4 +88,39 @@ public class AdjListsGraph implements Graph {
     public Iterable<Integer> adjacencies(int v) {
         return vEdjLists.get(v) == null ? nullIterable : vEdjLists.get(v);
     }
+
+    @Override
+    public Graph clone() {
+        return null;
+    }
+
+    @Override
+    public boolean[][] getAdjMatrix() {
+        return new boolean[0][];
+    }
+
+    @Override
+    public int getVCount() {
+        return 0;
+    }
+
+    @Override
+    public int getECount() {
+        return 0;
+    }
+
+    @Override
+    public void setAdjMatrix(boolean[][] adjMatrix) {
+
+    }
+
+    @Override
+    public void setVCount(int vCount) {
+
+    }
+
+    @Override
+    public void setECount(int eCount) {
+
+    }
 }

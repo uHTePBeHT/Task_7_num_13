@@ -39,9 +39,13 @@ import java.util.Locale;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
+import ru.vsu.cs.course1.graph.WeightedGraph;
 import ru.vsu.cs.util.SwingUtils;
 
 public class Program {
+
+    public static void dijkstraDemo() {
+    }
 
     /**
      * Основная функция программы

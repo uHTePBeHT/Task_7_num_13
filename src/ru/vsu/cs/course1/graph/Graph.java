@@ -51,4 +51,17 @@ public interface Graph {
         }
         return false;
     }
+    Graph clone();
+
+    boolean[][] getAdjMatrix();
+
+    int getVCount();
+
+    int getECount();
+
+    void setAdjMatrix(boolean[][] adjMatrix);
+
+    void setVCount(int vCount);
+
+    void setECount(int eCount);
 }
