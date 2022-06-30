@@ -64,9 +64,9 @@ public class GraphDemoFrame extends JFrame {
     private JComboBox comboBoxExample;
     private JButton buttonExampleExec;
     private JButton buttonCheck;
-    private JSpinner spinnerPointA;
-    private JSpinner spinnerPointB;
-    private JSpinner spinnerRoadsK;
+    private JTextField textFieldPointA;
+    private JTextField textFieldPointB;
+    private JTextField textFieldRoadsK;
 
     private JFileChooser fileChooserTxtOpen;
     private JFileChooser fileChooserDotOpen;
@@ -217,9 +217,9 @@ public class GraphDemoFrame extends JFrame {
         buttonCheck.addActionListener(e -> {
             try {
                 Task task = new Task();
-                int pA = (int) spinnerPointA.getValue();
-                int pB = (int) spinnerPointB.getValue();
-                int rK = (int) spinnerRoadsK.getValue();
+                int pA = Integer.parseInt(textFieldPointA.getText());
+                int pB = Integer.parseInt(textFieldPointB.getText());
+                int rK = Integer.parseInt(textFieldRoadsK.getText());
                 SwingUtils.showInfoMessageBox(task.solution(graph, pA, pB, rK));
             } catch (Exception exc) {
                 SwingUtils.showErrorMessageBox(exc);
@@ -551,12 +551,12 @@ public class GraphDemoFrame extends JFrame {
         final JLabel label5 = new JLabel();
         label5.setText("Можно ли закрыть?");
         panel7.add(label5, new GridConstraints(0, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        spinnerPointA = new JSpinner();
-        panel7.add(spinnerPointA, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(60, -1), null, 0, false));
-        spinnerPointB = new JSpinner();
-        panel7.add(spinnerPointB, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(60, -1), null, 0, false));
-        spinnerRoadsK = new JSpinner();
-        panel7.add(spinnerRoadsK, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(60, -1), null, 0, false));
+        textFieldPointA = new JTextField();
+        panel7.add(textFieldPointA, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        textFieldPointB = new JTextField();
+        panel7.add(textFieldPointB, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        textFieldRoadsK = new JTextField();
+        panel7.add(textFieldRoadsK, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JPanel panel8 = new JPanel();
         panel8.setLayout(new GridLayoutManager(2, 2, new Insets(0, 0, 0, 0), -1, -1));
         splitPaneGraphTab2.setRightComponent(panel8);

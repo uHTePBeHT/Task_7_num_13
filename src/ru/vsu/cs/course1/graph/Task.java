@@ -74,7 +74,7 @@ public class Task {
     }
 
     private StringBuilder answer(List<int[]> road) {
-        StringBuilder ans = new StringBuilder("Нет, так как нельзя при удалении ");
+        StringBuilder ans = new StringBuilder("Можно закрыть, удалив ");
         for (int[] r : road) {
             ans.append(r[0] + "-" + r[1] + " ");
         }
